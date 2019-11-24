@@ -1,16 +1,18 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/','Entrance\EntranceController@index')->name('entrance');
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'u','namespace' => 'User'], function(){
+    //注册
+    Route::get('register','CreateController@register')->name('register');
+    Route::post('createUser','CreateController@createUser')->name('createUser');
+    //登录
+    Route::get('login','LoginController@login')->name('login');
+    Route::post('userLogin','LoginController@userLogin')->name('userLogin');
+    //我的主页
+    Route::get('detail','PersonController@detail')->name('detail');
+    //退出
+    Route::post('logout','LoginController@logout')->name('logout');
+    //个人中心
+    Route::get('personalCenter','PersonController@personalCenter')->name('personalCenter');
 });
