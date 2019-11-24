@@ -4,7 +4,12 @@
         @include('app.shared._messages')
         @include('app.shared._errors')
         {{-------------------------------------------------------------------------}}
+        @foreach($users as $user)
 
+            <i class="{{ $user->country }} flag"></i>
+
+        @endforeach
+        {{ $users->render() }}
         <div class="ui placeholder segment">
             <div class="ui icon header">
                 <i class="pdf file outline icon"></i>
