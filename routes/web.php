@@ -1,8 +1,8 @@
 <?php
-
+/*---------------------------入口---------------------------------------------------------------------------------*/
 Route::get('/','Entrance\EntranceController@index')->name('entrance');
-
-Route::group(['prefix' => 'u','namespace' => 'User'], function(){
+/*---------------------------用户---------------------------------------------------------------------------------*/
+Route::group(['prefix' => 'user','namespace' => 'User'], function(){
     //注册
     Route::get('register','CreateController@register')->name('register');
     Route::post('createUser','CreateController@createUser')->name('createUser');
@@ -15,4 +15,8 @@ Route::group(['prefix' => 'u','namespace' => 'User'], function(){
     Route::post('logout','LoginController@logout')->name('logout');
     //个人中心
     Route::get('personalCenter','PersonController@personalCenter')->name('personalCenter');
+});
+/*---------------------------文章---------------------------------------------------------------------------------*/
+Route::group(['prefix' => 'article','namespace' => 'Article'], function(){
+
 });
