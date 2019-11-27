@@ -2,8 +2,8 @@
 <html lang="zh">
 <head>
     <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
-    <link href="{{ asset('icons/logoLeft.png') }}" rel="shortcut icon" />
-    @yield('css')
+    <link href="{{ asset('icons/main.png') }}" rel="shortcut icon" />
+    @yield('simpleMDE')
     @yield('style')
     <title>
         @yield('title', 'Base')

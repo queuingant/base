@@ -24,5 +24,7 @@ $factory->define(User::class, function (Faker $faker) {
         'avator' => 'f/system_avator/'.rand(1,13).'.jpg',
         'level' => 'small',
         'country' => 'cn',
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
     ];
 });

@@ -12,21 +12,18 @@ class User extends Authenticatable
 
     protected $table = 'app_users';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'name', 'email', 'password','level','country','avator'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     /*protected $hidden = [
         'password',
     ];*/
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
+
 }

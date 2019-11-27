@@ -16,5 +16,10 @@ class UsersTableSeeder extends Seeder
         });
 
         \App\Models\User::insert($statuses->toArray());
+
+        $user = \App\Models\User::find(1);
+        $user->email = '1332726782@qq.com';
+        $user->password = bcrypt('123456');
+        $user->save();
     }
 }

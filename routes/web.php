@@ -18,5 +18,12 @@ Route::group(['prefix' => 'user','namespace' => 'User'], function(){
 });
 /*---------------------------文章---------------------------------------------------------------------------------*/
 Route::group(['prefix' => 'article','namespace' => 'Article'], function(){
-
+    //
+    Route::get('articlesSmallToBig','SelectController@articlesSmallToBig')->name('articlesSmallToBig');
+    Route::get('articlesBigToSmall','SelectController@articlesBigToSmall')->name('articlesBigToSmall');
+    //
+    Route::get('articles/{article}','SelectController@articleDetail')->name('articleDetail');
+    //
+    Route::get('articleCreate','ViewController@articleCreate')->name('articleCreate');
+    Route::post('articleCreate','CreateController@articleCreate')->name('articleCreate');
 });

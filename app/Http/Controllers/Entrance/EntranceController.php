@@ -10,7 +10,6 @@ class EntranceController extends Controller
 {
     public function index()
     {
-        $users = User::paginate(10);
         return view("entrance.entrance",compact('users'));
     }
 }

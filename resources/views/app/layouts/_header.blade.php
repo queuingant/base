@@ -90,6 +90,20 @@
             </div>
         </div>
         {{-----------------------------------------------------------------------------------------}}
+        {{--文章--}}
+        <div class="ui dropdown item" tabindex="0">
+            文章
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <a class="item" href="{{ route('articlesSmallToBig') }}">
+                    所有文章-正序
+                </a>
+                <a class="item" href="{{ route('articlesBigToSmall') }}">
+                    所有文章-倒序
+                </a>
+            </div>
+        </div>
+        {{-----------------------------------------------------------------------------------------}}
         <div class="right menu">
             <div class="item">
                 <div class="ui action left icon input">
@@ -117,9 +131,9 @@
                             <i class="street view icon"></i>
                             个人中心
                         </a>
-                        <a href="" class="item">
-                            <i class="settings icon"></i>
-                            编辑资料
+                        <a href="{{ route('articleCreate') }}" class="item">
+                            <i class="pencil icon"></i>
+                            发表文章
                         </a>
                         <form method="post" action="{{ route('logout') }}" id="logoutForm">
                             {{ csrf_field() }}
